@@ -1,0 +1,23 @@
+# Pure settings
+
+fpath+=($HOME/.zsh/pure)
+autoload -U promptinit; promptinit
+
+## exec time
+PURE_CMD_MAX_EXEC_TIME=60
+PURE_PROMPT_SYMBOL='>'
+PURE_PROMPT_VICMD_SYMBOL='<'
+
+### arrow
+zstyle :prompt:pure:prompt:success color white
+zstyle :prompt:pure:prompt:error color red
+
+### git
+zstyle :prompt:pure:git:dirty color 8
+zstyle :prompt:pure:git:stash show yes
+zstyle :prompt:pure:git:stash color 8
+prompt pure
+
+### oneline prompt
+prompt_newline='%666v'
+PROMPT=" $PROMPT"

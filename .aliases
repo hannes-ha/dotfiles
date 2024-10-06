@@ -1,0 +1,32 @@
+# always promt on remove
+alias rm="rm -i"
+
+# python3 default
+alias py="python3"
+#alias pip="pip3"
+
+# mistypes
+alias vi="nvim"
+alias vim="nvim"
+alias cim="nvim"
+alias cd..="cd .."
+alias ..="cd .."
+
+# reload
+alias reload="source ~/.zshrc"
+
+# ls, grep colors
+alias ls='ls --color=auto'
+alias la='ls --color=auto -A'
+alias grep='grep -n --color'
+alias ll='ls -lah'
+
+# bat
+alias bat='batcat'
+
+# clipboard
+alias sclip="xclip -selection c"
+alias gclip="xclip -selection c -o"
+
+# lazygit
+alias lg='lazygit --use-config-file="$HOME/.config/lazygit/config.yml"'

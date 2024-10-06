@@ -1,0 +1,99 @@
+[
+  {
+    "bindings": {
+      "shift-escape": null,
+      "alt-k": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      "ctrl-e": "file_finder::Toggle",
+      "space e": "project_panel::ToggleFocus",
+      "space P": "projects::OpenRecent"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-e": "file_finder::Toggle",
+      "ctrl-c": "editor::Copy",
+      "ctrl-x": "editor::Cut",
+      "ctrl-f": "buffer_search::Deploy",
+      "super-8": null
+    }
+  },
+  {
+    "context": "Editor && !Vimwaiting && VimControl && !menu",
+    "bindings": {
+      // Put key bindings here if you want them to work in normal & visual mode.
+      "space h r": "editor::RevertSelectedHunks",
+      "space h p": "editor::ToggleHunkDiff",
+      "space h n": "editor::GoToHunk",
+      "space h N": "editor::GoToPrevHunk",
+      "g r": "editor::FindAllReferences",
+      "g i": "editor::GoToImplementation",
+      "g e": "editor::GoToDiagnostic",
+      "g E": "editor::GoToPrevDiagnostic",
+      "space g e": "diagnostics::Deploy",
+      "g D": "editor::GoToDefinitionSplit",
+      "space tab": "tab_switcher::Toggle",
+      "space c r": "pane::CloseItemsToTheRight",
+      "space c a": "pane::CloseAllItems",
+      "space s r": "pane::SplitRight",
+      "space e": "workspace::ToggleLeftDock",
+      "space P": "projects::OpenRecent",
+      "space p": ["workspace::SendKeystrokes", "\" 0 p"],
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"]
+    }
+  },
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "shift-y": ["workspace::SendKeystrokes", "y $"] // Use neovim's yank behavior: yank to end of line.
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
+    "bindings": {
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp"
+    }
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore" // In insert mode, make jk escape to normal mode.
+    }
+  },
+  {
+    "context": "TabSwitcher",
+    "bindings": {
+      "k": "menu::SelectPrev",
+      "j": "menu::SelectNext",
+      "q": "tab_switcher::CloseSelectedItem"
+    }
+  },
+  {
+    "context": "TabSwitcher",
+    "bindings": {
+      "k": "menu::SelectPrev",
+      "j": "menu::SelectNext",
+      "q": "tab_switcher::CloseSelectedItem"
+    }
+  },
+  {
+    "context": "Editor && showing_code_actions",
+    "bindings": {
+      "k": "editor::ContextMenuPrev",
+      "j": "editor::ContextMenuNext"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-enter": ["terminal::SendText", "\n"]
+    }
+  }
+]
