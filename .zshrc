@@ -10,7 +10,9 @@ source ~/.aliases
 source ~/.pure_prompt
 
 # fzf shell integration
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if command -v fzf &> /dev/null && [ -f ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
+fi
 
 # z
 if command -v zoxide 2>&1 > /dev/null; then
@@ -41,4 +43,6 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 # local settings go here
-[ -f ~/.zshrc.locals ] && source ~/.zshrc.locals
+if [[ -f ~/.zshrc.locals ]]; then 
+  source ~/.zshrc.locals
+fi
