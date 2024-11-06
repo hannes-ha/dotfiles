@@ -32,7 +32,9 @@ compinit
 zstyle ':completion:*' menu select
 
 # run tmux if not in vscode
-[[ $TERM_PROGRAM != vscode && $TERM_PROGRAM != zed ]] && [[ -z "$TMUX" ]] && exec tmux
+if command -v tmux &> /dev/null && [ -z "$TMUX" ] && [[ $TERM_PROGRAM != vscode && $TERM_PROGRAM != zed ]]; then
+  tmux attach-session -t default || tmux new-session -s default
+fi
 
 # Vim as default editor
 export VISUAL=vim
