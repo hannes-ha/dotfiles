@@ -42,6 +42,9 @@ fi
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# Use .config dir for config on MacOS
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # local settings go here
 if [[ -f ~/.zshrc.locals ]]; then 
   source ~/.zshrc.locals
