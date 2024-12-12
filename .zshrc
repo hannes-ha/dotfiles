@@ -33,19 +33,15 @@ autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
 
-# run tmux if not in vscode
-if command -v tmux &> /dev/null && [ -z "$TMUX" ] && [[ $TERM_PROGRAM != vscode && $TERM_PROGRAM != zed ]]; then
-  tmux attach-session -t default || tmux new-session -s default
-fi
-
-# Vim as default editor
-export VISUAL=vim
-export EDITOR="$VISUAL"
-
 # Use .config dir for config on MacOS
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # local settings go here
 if [[ -f ~/.zshrc.locals ]]; then 
   source ~/.zshrc.locals
+fi
+
+# run tmux if not in vscode
+if command -v tmux &> /dev/null && [ -z "$TMUX" ] && [[ $TERM_PROGRAM != vscode && $TERM_PROGRAM != zed ]]; then
+  tmux attach-session -t default || tmux new-session -s default
 fi
