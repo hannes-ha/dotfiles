@@ -10,8 +10,8 @@ source ~/.aliases
 source ~/.pure_prompt
 
 # fzf shell integration
-if command -v fzf &> /dev/null && [ -f ~/.fzf.zsh ]; then
-  source ~/.fzf.zsh
+if command -v fzf &> /dev/null; then
+  source <(fzf --zsh)
 fi
 
 # z
