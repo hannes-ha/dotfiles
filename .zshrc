@@ -6,8 +6,16 @@ setopt histignorealldups sharehistory
 # aliases
 source ~/.aliases
 
-# pure prompt
-source ~/.pure_prompt
+# prompt
+# enable git info on zsh
+autoload -Uz vcs_info
+precmd() { vcs_info }
+setopt prompt_subst
+# only show branch info
+zstyle ':vcs_info:git:*' formats "%b"
+# blue path, grey branch if in repo, red or white > depending on last exit code
+PROMPT='
+%F{blue}%~%f %F{242}${vcs_info_msg_0_:+${vcs_info_msg_0_} }%(?.%F{white}.%F{red})>%f '
 
 # fzf shell integration
 if command -v fzf &> /dev/null; then
