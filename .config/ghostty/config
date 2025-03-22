@@ -3,4 +3,24 @@ font-size = 14
 title = " "
 macos-option-as-alt = left
 foreground = #c5c9c5
-keybind = cmd+k=text:\x1bk
+# keybind = cmd+k=text:\x1bk
+mouse-hide-while-typing = true
+shell-integration-features = no-cursor
+macos-titlebar-proxy-icon = hidden
+cursor-style = block
+window-padding-x = 10
+window-padding-y = 10
+
+
+keybind = ctrl+space>w=new_tab
+keybind = ctrl+space>s=new_window
+keybind = ctrl+space>v=new_split:right
+keybind = ctrl+space>h=new_split:down
+
+keybind = ctrl+k=goto_split:up
+keybind = ctrl+j=goto_split:down
+keybind = ctrl+l=goto_split:right
+keybind = ctrl+h=goto_split:left
+
+keybind = cmd+k=next_tab
+keybind = cmd+j=previous_tab

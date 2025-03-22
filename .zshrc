@@ -48,8 +48,3 @@ export XDG_CONFIG_HOME="$HOME/.config"
 if [[ -f ~/.zshrc.locals ]]; then 
   source ~/.zshrc.locals
 fi
-
-# run tmux if not in vscode
-if command -v tmux &> /dev/null && [ -z "$TMUX" ] && [[ $TERM_PROGRAM != vscode && $TERM_PROGRAM != zed ]]; then
-  tmux attach-session -t default || tmux new-session -s default
-fi
