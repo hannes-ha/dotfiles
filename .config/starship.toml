@@ -1,0 +1,22 @@
+# Disable all modules except the ones we need
+format = """
+$directory\
+$character
+"""
+right_format = """
+$git_branch\
+$git_status\
+"""
+
+[character]
+success_symbol = "[>](foreground)"  # This is the default prompt symbol.
+error_symbol = "[>](red)"  # This is the default prompt symbol.
+
+[directory]
+truncate_to_repo = false
+style="blue"
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch) ](white)'
+
+
