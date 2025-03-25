@@ -16,11 +16,19 @@ source ~/.aliases
 # blue path, grey branch if in repo, red or white > depending on last exit code
 # PROMPT='
 # %F{blue}%~%f %F{242}${vcs_info_msg_0_:+${vcs_info_msg_0_} }%(?.%F{white}.%F{red})>%f '
-eval "$(starship init zsh)"
+type starship_zle-keymap-select >/dev/null || \
+{
+  eval "$(starship init zsh)"
+}
+
+# vim mode
+bindkey -v
 
 # fzf shell integration
 if command -v fzf &> /dev/null; then
   source <(fzf --zsh)
+  export FZF_DEFAULT_OPTS="--layout=reverse --info=inline --border --margin=1 --padding=1"
+  bindkey "^E" autosuggest-accept
 fi
 
 # z

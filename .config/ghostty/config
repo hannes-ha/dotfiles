@@ -3,11 +3,8 @@ font-size = 14
 title = " "
 macos-option-as-alt = left
 foreground = #c5c9c5
-# keybind = cmd+k=text:\x1bk
 mouse-hide-while-typing = true
-shell-integration-features = no-cursor
 macos-titlebar-proxy-icon = hidden
-cursor-style = block
 window-padding-x = 10
 window-padding-y = 10
 
